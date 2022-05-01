@@ -77,6 +77,7 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 	@Override
 	@Nullable
 	public Object postProcessBeforeInitialization(final Object bean, String beanName) throws BeansException {
+		System.out.println("org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization");
 		AccessControlContext acc = null;
 
 		if (System.getSecurityManager() != null &&
@@ -100,6 +101,7 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 	}
 
 	private void invokeAwareInterfaces(Object bean) {
+		System.out.println("org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces");
 		if (bean instanceof Aware) {
 			if (bean instanceof EnvironmentAware) {
 				((EnvironmentAware) bean).setEnvironment(this.applicationContext.getEnvironment());
@@ -117,6 +119,7 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 				((MessageSourceAware) bean).setMessageSource(this.applicationContext);
 			}
 			if (bean instanceof ApplicationContextAware) {
+				System.out.println(!bean.getClass().getSimpleName().equals("IndexDao"));
 				((ApplicationContextAware) bean).setApplicationContext(this.applicationContext);
 			}
 		}

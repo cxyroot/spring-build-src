@@ -32,6 +32,7 @@ import org.springframework.core.env.EnvironmentCapable;
 import org.springframework.core.env.StandardEnvironment;
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
+import org.springframework.util.SocketUtils;
 
 /**
  * Convenient adapter for programmatic registration of annotated bean classes.
@@ -84,6 +85,8 @@ public class AnnotatedBeanDefinitionReader {
 		Assert.notNull(environment, "Environment must not be null");
 		this.registry = registry;
 		this.conditionEvaluator = new ConditionEvaluator(registry, environment, null);
+		System.out.println("org.springframework.context.annotation.AnnotationConfigUtils." +
+				"registerAnnotationConfigProcessors(org.springframework.beans.factory.support.BeanDefinitionRegistry)");
 		AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
 	}
 
@@ -131,7 +134,9 @@ public class AnnotatedBeanDefinitionReader {
 	 * e.g. {@link Configuration @Configuration} classes
 	 */
 	public void register(Class<?>... annotatedClasses) {
+		System.out.println("org.springframework.context.annotation.AnnotatedBeanDefinitionReader.register");
 		for (Class<?> annotatedClass : annotatedClasses) {
+			System.out.println(annotatedClass);
 			registerBean(annotatedClass);
 		}
 	}
@@ -213,6 +218,10 @@ public class AnnotatedBeanDefinitionReader {
 	<T> void doRegisterBean(Class<T> annotatedClass, @Nullable Supplier<T> instanceSupplier, @Nullable String name,
 			@Nullable Class<? extends Annotation>[] qualifiers, BeanDefinitionCustomizer... definitionCustomizers) {
 
+
+		System.out.println("org.springframework.context.annotation.AnnotatedBeanDefinitionReader.doRegisterBean");
+
+
 		AnnotatedGenericBeanDefinition abd = new AnnotatedGenericBeanDefinition(annotatedClass);
 		if (this.conditionEvaluator.shouldSkip(abd.getMetadata())) {
 			return;
@@ -237,12 +246,18 @@ public class AnnotatedBeanDefinitionReader {
 				}
 			}
 		}
+
 		for (BeanDefinitionCustomizer customizer : definitionCustomizers) {
 			customizer.customize(abd);
 		}
 
+		//重要
+		System.out.println("org.springframework.beans.factory.config.BeanDefinitionHolder");
 		BeanDefinitionHolder definitionHolder = new BeanDefinitionHolder(abd, beanName);
+
+		//代理模型
 		definitionHolder = AnnotationConfigUtils.applyScopedProxyMode(scopeMetadata, definitionHolder, this.registry);
+
 		BeanDefinitionReaderUtils.registerBeanDefinition(definitionHolder, this.registry);
 	}
 

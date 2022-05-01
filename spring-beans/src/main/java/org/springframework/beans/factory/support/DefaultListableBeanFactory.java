@@ -850,6 +850,10 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 				// Still in startup registration phase
 				this.beanDefinitionMap.put(beanName, beanDefinition);
 				this.beanDefinitionNames.add(beanName);
+				for (String beanDefinitionName : this.beanDefinitionNames) {
+					System.out.println("beanDefinitionName====="+beanDefinitionName);
+				}
+
 				this.manualSingletonNames.remove(beanName);
 			}
 			this.frozenBeanDefinitionNames = null;

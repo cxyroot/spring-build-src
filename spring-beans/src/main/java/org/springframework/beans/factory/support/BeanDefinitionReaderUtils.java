@@ -154,6 +154,7 @@ public class BeanDefinitionReaderUtils {
 		String[] aliases = definitionHolder.getAliases();
 		if (aliases != null) {
 			for (String alias : aliases) {
+				System.out.println("org.springframework.beans.factory.support.BeanDefinitionReaderUtils.registerBeanDefinition"+beanName);
 				registry.registerAlias(beanName, alias);
 			}
 		}

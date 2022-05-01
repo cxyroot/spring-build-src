@@ -9,9 +9,18 @@ public class SpringTest {
 		////BeanDefinition
 		AnnotationConfigApplicationContext annotationConfigApplicationContext = new
 				AnnotationConfigApplicationContext(AppConfig.class);
-		//System.out.println(annotationConfigApplicationContext);
-		//annotationConfigApplicationContext.register();
 		IndexDao indexDao = annotationConfigApplicationContext.getBean(IndexDao.class);
 		indexDao.query();
+
+		//org.springframework.beans.factory.config.BeanFactoryPostProcessor
 	}
+	/*
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext annotationConfigApplicationContext = new
+				AnnotationConfigApplicationContext();
+		annotationConfigApplicationContext.register(IndexDao.class);
+		annotationConfigApplicationContext.refresh();
+		IndexDao indexDao = annotationConfigApplicationContext.getBean(IndexDao.class);
+		indexDao.query();
+	}*/
 }

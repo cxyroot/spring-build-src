@@ -317,7 +317,8 @@ public class GenericApplicationContext extends AbstractApplicationContext implem
 	@Override
 	public void registerBeanDefinition(String beanName, BeanDefinition beanDefinition)
 			throws BeanDefinitionStoreException {
-
+		System.out.println("org.springframework.context.support.GenericApplicationContext.registerBeanDefinition");
+		System.out.println("org.springframework.beans.factory.support.DefaultListableBeanFactory");
 		this.beanFactory.registerBeanDefinition(beanName, beanDefinition);
 	}
 

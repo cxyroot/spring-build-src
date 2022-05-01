@@ -132,7 +132,6 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 		this.delegate = createDelegate(getReaderContext(), root, parent);
 
 		if (this.delegate.isDefaultNamespace(root)) {
-			System.out.println("//处理profile属性");
 			String profileSpec = root.getAttribute(PROFILE_ATTRIBUTE);
 			if (StringUtils.hasText(profileSpec)) {
 				String[] specifiedProfiles = StringUtils.tokenizeToStringArray(
@@ -147,10 +146,8 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 			}
 		}
 
-		//处理前，留给子类实现
 		preProcessXml(root);
 		parseBeanDefinitions(root, this.delegate);
-		//处理后，留给子类实现
 		postProcessXml(root);
 
 		this.delegate = parent;

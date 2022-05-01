@@ -62,9 +62,12 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * through {@link #register} calls and then manually {@linkplain #refresh refreshed}.
 	 */
 	public AnnotationConfigApplicationContext() {
+		System.out.println("org.springframework.beans.factory.config.BeanDefinition");
+		System.out.println("org.springframework.context.annotation.AnnotatedBeanDefinitionReader");
 		//
 		this.reader = new AnnotatedBeanDefinitionReader(this);
 		//
+		System.out.println("org.springframework.context.annotation.ClassPathBeanDefinitionScanner");
 		this.scanner = new ClassPathBeanDefinitionScanner(this);
 	}
 
