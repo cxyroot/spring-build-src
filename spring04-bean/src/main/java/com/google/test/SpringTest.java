@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class SpringTest {
 	public static void main(String[] args) {
+
 		////BeanDefinition
 		AnnotationConfigApplicationContext annotationConfigApplicationContext = new
 				AnnotationConfigApplicationContext(AppConfig.class);

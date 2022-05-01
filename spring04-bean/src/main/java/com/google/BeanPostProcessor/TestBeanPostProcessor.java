@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TestBeanPostProcessor implements BeanPostProcessor {
+
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 		if (beanName.equals("indexDao")){
