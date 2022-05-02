@@ -8,7 +8,7 @@ import javax.annotation.PostConstruct;
 public class IndexDao {
 
 	public IndexDao(){
-		System.out.println("构造方法");
+		System.out.println("IndexDao Function");
 	}
 
 	@PostConstruct

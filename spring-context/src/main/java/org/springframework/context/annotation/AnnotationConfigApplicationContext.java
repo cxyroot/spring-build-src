@@ -70,6 +70,8 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 		this.reader = new AnnotatedBeanDefinitionReader(this);
 		//
 		System.out.println("org.springframework.context.annotation.ClassPathBeanDefinitionScanner");
+
+
 		this.scanner = new ClassPathBeanDefinitionScanner(this);
 	}
 
