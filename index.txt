@@ -1,3 +1,11 @@
 org.springframework.beans.factory.BeanFactory
 org.springframework.beans.factory.config.BeanDefinition
+注解驱动
 
+Spring JavaConfig
+
+java基础的
+@Bean
+@Configuration
+@Import
+@DependsOn

@@ -33,4 +33,5 @@ include 'spring02'
 include 'spring03'
 include 'spring04-bean'
 include 'spring05'
+include 'spring06'
 
