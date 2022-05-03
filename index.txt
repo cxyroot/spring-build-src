@@ -9,3 +9,6 @@ java基础的
 @Configuration
 @Import
 @DependsOn
+
+
+Introspector.decapitalize(shortClassName);

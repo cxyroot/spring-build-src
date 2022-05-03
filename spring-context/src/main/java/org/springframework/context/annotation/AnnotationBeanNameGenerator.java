@@ -68,6 +68,7 @@ public class AnnotationBeanNameGenerator implements BeanNameGenerator {
 
 	@Override
 	public String generateBeanName(BeanDefinition definition, BeanDefinitionRegistry registry) {
+		System.out.println("org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName");
 		if (definition instanceof AnnotatedBeanDefinition) {
 			String beanName = determineBeanNameFromAnnotation((AnnotatedBeanDefinition) definition);
 			if (StringUtils.hasText(beanName)) {
@@ -86,7 +87,8 @@ public class AnnotationBeanNameGenerator implements BeanNameGenerator {
 	 */
 	@Nullable
 	protected String determineBeanNameFromAnnotation(AnnotatedBeanDefinition annotatedDef) {
-		AnnotationMetadata amd = annotatedDef.getMetadata();
+		System.out.println("org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation");
+		AnnotationMetadata amd = annotatedDef.getMetadata(); // Metadata
 		Set<String> types = amd.getAnnotationTypes();
 		String beanName = null;
 		for (String type : types) {

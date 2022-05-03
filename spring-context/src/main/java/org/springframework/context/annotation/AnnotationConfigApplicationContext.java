@@ -109,7 +109,9 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 */
 	public AnnotationConfigApplicationContext(String... basePackages) {
 		this();
+
 		scan(basePackages);
+
 		refresh();
 	}
 
