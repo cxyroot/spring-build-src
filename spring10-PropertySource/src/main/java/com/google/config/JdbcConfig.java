@@ -23,6 +23,7 @@ public class JdbcConfig {
 
 	@Bean(value = "dataSource")
 	public DataSource createDataSource(){
+		System.out.println("driver::::"+driver);
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName(driver);
 		dataSource.setUrl(url);
