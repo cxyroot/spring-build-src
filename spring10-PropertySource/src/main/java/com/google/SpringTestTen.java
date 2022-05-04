@@ -3,6 +3,8 @@ package com.google;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 
 public class SpringTestTen {
@@ -10,7 +12,12 @@ public class SpringTestTen {
 		AnnotationConfigApplicationContext annotationConfigApplicationContext
 				=new AnnotationConfigApplicationContext("com.google.config");
 		DataSource dataSource = annotationConfigApplicationContext.getBean("dataSource", DataSource.class);
-		System.out.println(dataSource);
+		try {
+			Connection connection = dataSource.getConnection();
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 		/*String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
 		for (String beanDefinitionName : beanDefinitionNames) {

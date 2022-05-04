@@ -11,13 +11,13 @@ public class JdbcConfig {
 	@Value("${jdbc.driver}")
 	private String driver;
 
-	@Value("${jdbc.driver}")
+	@Value("${jdbc.url}")
 	private String url;
 
 	@Value("${jdbc.username}")
 	private String username;
 
-	@Value("${jdbc.username}")
+	@Value("${jdbc.password}")
 	private String password;
 
 
