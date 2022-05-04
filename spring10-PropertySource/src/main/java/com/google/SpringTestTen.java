@@ -21,10 +21,10 @@ public class SpringTestTen {
 			e.printStackTrace();
 		}
 
-		/*String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
+		String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
 		for (String beanDefinitionName : beanDefinitionNames) {
 			System.err.println(beanDefinitionName);
-		}*/
+		}
 
 	}
 }

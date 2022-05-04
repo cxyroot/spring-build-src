@@ -17,8 +17,10 @@ public class SpringConfig {
 	 * (java.lang.String, org.springframework.core.io.support.EncodedResource)
 	 * @return
 	 */
+
+	/**
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer createPropertySourcesPlaceholderConfigurer(){
 		return new PropertySourcesPlaceholderConfigurer();
-	}
+	}*/
 }
