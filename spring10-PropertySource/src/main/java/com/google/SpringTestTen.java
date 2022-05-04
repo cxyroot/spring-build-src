@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import javax.sql.DataSource;
 
 
-public class SpringTestNine {
+public class SpringTestTen {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext annotationConfigApplicationContext
 				=new AnnotationConfigApplicationContext("com.google.config");
