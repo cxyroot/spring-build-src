@@ -8,8 +8,9 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @Import(JdbcConfig.class)
-//@PropertySource("classpath:jdbc.properties")
-@PropertySource("file:///D:/JavaCode/SrcCode/spring-build-src/spring10-PropertySource/src/main/resources/jdbc.properties")
+@PropertySource("classpath:jdbc.properties")
+//@PropertySource("file:///D:/JavaCode/SrcCode/spring-build-src/spring10-PropertySource/src/main/resources/jdbc.properties")
+//@PropertySource("classpath:jdbc.xml")
 //org.springframework.core.io.support.PropertySourceFactory
 public class SpringConfig {
 	/**
