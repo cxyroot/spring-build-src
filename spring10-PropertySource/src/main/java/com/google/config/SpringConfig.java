@@ -1,14 +1,14 @@
 package com.google.config;
 
-import org.springframework.context.annotation.Bean;
+import com.google.factory.YamlPropertySourceFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @Import(JdbcConfig.class)
-@PropertySource("classpath:jdbc.properties")
+//@PropertySource("classpath:jdbc.properties")
+@PropertySource(value = "classpath:jdbc.yml",factory = YamlPropertySourceFactory.class)
 //@PropertySource("file:///D:/JavaCode/SrcCode/spring-build-src/spring10-PropertySource/src/main/resources/jdbc.properties")
 //@PropertySource("classpath:jdbc.xml")
 //org.springframework.core.io.support.PropertySourceFactory
