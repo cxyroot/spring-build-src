@@ -36,5 +36,11 @@ public class SpringTestTen {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
+		String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
+		for (String beanDefinitionName : beanDefinitionNames) {
+			System.err.println(beanDefinitionName);
+		}
+
 	}
 }
