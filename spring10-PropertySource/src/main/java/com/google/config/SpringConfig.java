@@ -1,9 +1,7 @@
 package com.google.config;
 
 import com.google.factory.YamlPropertySourceFactory;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 
 @Configuration
 @Import(JdbcConfig.class)
@@ -12,6 +10,9 @@ import org.springframework.context.annotation.PropertySource;
 //@PropertySource("file:///D:/JavaCode/SrcCode/spring-build-src/spring10-PropertySource/src/main/resources/jdbc.properties")
 //@PropertySource("classpath:jdbc.xml")
 //org.springframework.core.io.support.PropertySourceFactory
+//@DependsOn
+//@Lazy
+//@Profile(value="")
 public class SpringConfig {
 	/**
 	 * org.springframework.core.io.support.ResourcePropertySource#ResourcePropertySource

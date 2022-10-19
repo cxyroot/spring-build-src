@@ -828,6 +828,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 							"] with [" + beanDefinition + "]");
 				}
 			}
+			System.out.println("org.springframework.beans.factory.support.DefaultListableBeanFactory.registerBeanDefinition");
 			this.beanDefinitionMap.put(beanName, beanDefinition);
 		}
 		else {

@@ -334,7 +334,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 				if (encodedResource.getEncoding() != null) {
 					inputSource.setEncoding(encodedResource.getEncoding());
 				}
-				System.out.println("doLoadBeanDefinitions");
+				System.out.println("org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions");
 				return doLoadBeanDefinitions(inputSource, encodedResource.getResource());
 			}
 			finally {
@@ -391,7 +391,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 			throws BeanDefinitionStoreException {
 		try {
 			Document doc = doLoadDocument(inputSource, resource);
-			System.out.println("registerBeanDefinitions");
+			System.out.println("org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions");
 			return registerBeanDefinitions(doc, resource);
 		}
 		catch (BeanDefinitionStoreException ex) {

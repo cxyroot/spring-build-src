@@ -515,6 +515,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 	@Override
 	public void refresh() throws BeansException, IllegalStateException {
+		System.out.println("org.springframework.context.support.AbstractApplicationContext.refresh");
 		synchronized (this.startupShutdownMonitor) {
 			// Prepare this context for refreshing.
 			System.out.println("准备刷新的上下文环境");

@@ -76,6 +76,7 @@ public class XmlBeanFactory extends DefaultListableBeanFactory {
 	 */
 	public XmlBeanFactory(Resource resource, BeanFactory parentBeanFactory) throws BeansException {
 		super(parentBeanFactory);
+		System.out.println("org.springframework.beans.factory.xml.XmlBeanFactory.XmlBeanFactory(org.springframework.core.io.Resource, org.springframework.beans.factory.BeanFactory):resource"+resource);
 		System.out.println("org.springframework.beans.factory.xml.XmlBeanFactory.XmlBeanFactory(org.springframework.core.io.Resource, org.springframework.beans.factory.BeanFactory)");
 		this.reader.loadBeanDefinitions(resource);
 	}

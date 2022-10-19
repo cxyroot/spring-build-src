@@ -1,8 +1,11 @@
 package com.google;
 
 
+import org.springframework.context.annotation.DependsOn;
+
 @Deprecated
-public class StringTestEleven {
+@DependsOn
+public class  StringTestEleven {
 	public static void main(String[] args) {
 		/*System.out.println("123456");
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");

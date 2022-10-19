@@ -81,12 +81,15 @@ public class AnnotatedBeanDefinitionReader {
 	 * @since 3.1
 	 */
 	public AnnotatedBeanDefinitionReader(BeanDefinitionRegistry registry, Environment environment) {
+		System.out.println("org.springframework.context.annotation.AnnotatedBeanDefinitionReader.AnnotatedBeanDefinitionReader(org.springframework.beans.factory.support.BeanDefinitionRegistry, org.springframework.core.env.Environment)");
 		Assert.notNull(registry, "BeanDefinitionRegistry must not be null");
 		Assert.notNull(environment, "Environment must not be null");
 		this.registry = registry;
 		this.conditionEvaluator = new ConditionEvaluator(registry, environment, null);
 		System.out.println("org.springframework.context.annotation.AnnotationConfigUtils." +
 				"registerAnnotationConfigProcessors(org.springframework.beans.factory.support.BeanDefinitionRegistry)");
+
+
 		AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
 	}
 
