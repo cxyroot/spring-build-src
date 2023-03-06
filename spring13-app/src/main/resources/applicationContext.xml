@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- 写的是对象的相关配置 -->
+   <!-- bean结点代表配置一个javabean的对象 
+             id属性代表bean的编号,方便以后调用 
+             class属性代表类所对应的路径  :   包名.类名
+             
+             
+        bean的子结点:
+           property 结点：代表类的相关属性的配置
+                     它的属性：
+                    name属性:代表属性名（setter方法，把set去掉,并且把第一个大写字母改成小写，其它不改）
+                    value属性：代表它的取值
+                    ref属性：代表引入一个已经在spring配置文件中存在的对象
+   -->
+   <bean id="spring" class="com.google.bean.Book">
+       <property name="id" value="B001"></property>
+       <property name="name" value="精通spring开发"></property>
+       <property name="author" value="老张"></property>
+       <property name="price" value="200"></property>
+   </bean>
+   
+   <bean id="stu" class="com.google.bean.Student">
+      <property name="sid" value="S100"></property>
+      <property name="name" value="张志超"></property>
+      <property name="springBook" ref="spring"></property>  <!-- references:相关的，关联的 -->
+   </bean>
+</beans>

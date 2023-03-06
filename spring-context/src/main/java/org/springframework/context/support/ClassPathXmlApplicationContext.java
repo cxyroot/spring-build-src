@@ -63,6 +63,7 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 	 * @see #afterPropertiesSet()
 	 */
 	public ClassPathXmlApplicationContext() {
+		System.out.println("org.springframework.context.support.ClassPathXmlApplicationContext.ClassPathXmlApplicationContext()");
 	}
 
 	/**
@@ -142,8 +143,10 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 		super(parent);
 		System.out.println("中文问题。。。");
 		System.out.println("org.springframework.context.support.ClassPathXmlApplicationContext.ClassPathXmlApplicationContext(java.lang.String[], boolean, org.springframework.context.ApplicationContext)");
+		System.out.println(configLocations);
 		setConfigLocations(configLocations);
 		if (refresh) {
+			System.out.println(refresh);
 			refresh();
 		}
 	}

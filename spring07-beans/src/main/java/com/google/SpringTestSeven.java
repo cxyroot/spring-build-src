@@ -14,7 +14,7 @@ public class SpringTestSeven {
 		System.out.println(dataSource);
 		 */
 		AnnotationConfigApplicationContext annotationConfigApplicationContext
-				=new AnnotationConfigApplicationContext("com.google.config");
+				= new AnnotationConfigApplicationContext("com.google.config");
 		JdbcTemplate jdbcTemplate = annotationConfigApplicationContext.getBean("jdbcTemplate",JdbcTemplate.class);
 		System.out.println(jdbcTemplate);
 	}

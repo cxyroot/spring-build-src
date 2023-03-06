@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Lazy
 @Component
 
-@Conditional(value= WorkTools.class)
+//@Conditional(value= "WorkTools")
 public class LogUtils {
 
 	public void printLog(){

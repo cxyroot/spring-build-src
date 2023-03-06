@@ -38,4 +38,5 @@ include 'spring07-beans'
 include 'spring08-import'
 include 'spring11-bean'
 include 'spring12-ds'
+include 'spring13-app'
 
