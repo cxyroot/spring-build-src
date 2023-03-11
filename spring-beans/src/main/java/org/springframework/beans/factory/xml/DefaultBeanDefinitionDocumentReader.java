@@ -167,7 +167,8 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 	 * @param root the DOM root element of the document
 	 */
 	protected void parseBeanDefinitions(Element root, BeanDefinitionParserDelegate delegate) {
-		System.out.println("start---------------------------------org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions");
+		System.out.println("start---------------------------------o" +
+				"rg.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions");
 		if (delegate.isDefaultNamespace(root)) {
 			NodeList nl = root.getChildNodes();
 			for (int i = 0; i < nl.getLength(); i++) {
@@ -175,9 +176,11 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 				if (node instanceof Element) {
 					Element ele = (Element) node;
 					if (delegate.isDefaultNamespace(ele)) {
+						//1
 						parseDefaultElement(ele, delegate);
 					}
 					else {
+						//2
 						delegate.parseCustomElement(ele);
 					}
 				}
@@ -186,7 +189,8 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 		else {
 			delegate.parseCustomElement(root);
 		}
-		System.out.println("end---------------------------------org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions");
+		System.out.println("end---------------------------------" +
+				"org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions");
 	}
 
 	private void parseDefaultElement(Element ele, BeanDefinitionParserDelegate delegate) {

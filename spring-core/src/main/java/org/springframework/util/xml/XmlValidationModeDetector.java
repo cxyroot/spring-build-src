@@ -124,6 +124,7 @@ public class XmlValidationModeDetector {
 	 * Does the content contain the DTD DOCTYPE declaration?
 	 */
 	private boolean hasDoctype(String content) {
+		System.out.println("org.springframework.util.xml.XmlValidationModeDetector.hasDoctype");
 		return content.contains(DOCTYPE);
 	}
 

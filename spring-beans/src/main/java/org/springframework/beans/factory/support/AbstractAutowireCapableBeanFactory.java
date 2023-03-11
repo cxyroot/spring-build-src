@@ -170,6 +170,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		ignoreDependencyInterface(BeanNameAware.class);
 		ignoreDependencyInterface(BeanFactoryAware.class);
 		ignoreDependencyInterface(BeanClassLoaderAware.class);
+		System.out.println("org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.AbstractAutowireCapableBeanFactory()");
 	}
 
 	/**
